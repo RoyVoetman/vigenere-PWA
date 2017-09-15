@@ -12,6 +12,16 @@
     };
 
     /*****************************************************************************
+     *
+     * Javascript modulo bug
+     * https://stackoverflow.com/questions/4467539/javascript-modulo-gives-a-negative-result-for-negative-numbers
+     *
+     ****************************************************************************/
+    Number.prototype.mod = function(n) {
+        return ((this%n)+n)%n;
+    };
+
+    /*****************************************************************************
     *
     * Event listeners for UI elements
     *
@@ -53,11 +63,15 @@
                 plaintextCharIndex = charToIndex( app.plaintext[i].toLowerCase() );
                 keyCharIndex       = charToIndex( app.key[j].toLowerCase()       );
 
-                if(encrypt) { cipherIndex = plaintextCharIndex + keyCharIndex }
-                else        { cipherIndex = plaintextCharIndex - keyCharIndex }
+
+
+                if(encrypt) { cipherIndex = app.encryptFormula(plaintextCharIndex, keyCharIndex) }
+                else        { cipherIndex = app.decryptFormula(plaintextCharIndex, keyCharIndex) }
 
                 cipherIndex = cipherIndex % 26;
                 cipherChar  = app.alphabet[ cipherIndex ];
+
+                console.log(cipherChar + ": " + app.decryptFormula(plaintextCharIndex, keyCharIndex));
 
                 if( isUpper(app.plaintext[i]) ) {
                     cipherChar = cipherChar.toUpperCase();
@@ -80,6 +94,14 @@
 
         app.resultElement.textContent = ciphertext;
 
+    };
+
+    app.encryptFormula = function (pIndex, kIndex) {
+        return (pIndex + kIndex).mod(26);
+    };
+
+    app.decryptFormula = function (cIndex, kIndex) {
+        return (cIndex - kIndex).mod(26);
     };
 
     /*****************************************************************************
