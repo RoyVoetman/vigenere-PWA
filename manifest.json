@@ -5,8 +5,13 @@
     "description": "A simply encryption app that uses the Vigenere method",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png?v=vMr0RXM5mN",
+            "src": "/demos/vigenere/android-chrome-192x192.png?v=vMr0RXM5mN",
             "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/demos/vigenere//android-chrome-144x144.png",
+            "sizes": "144x144",
             "type": "image/png"
         }
     ],
