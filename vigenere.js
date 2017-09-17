@@ -64,14 +64,10 @@
                 keyCharIndex       = charToIndex( app.key[j].toLowerCase()       );
 
 
-
                 if(encrypt) { cipherIndex = app.encryptFormula(plaintextCharIndex, keyCharIndex) }
                 else        { cipherIndex = app.decryptFormula(plaintextCharIndex, keyCharIndex) }
 
-                cipherIndex = cipherIndex % 26;
                 cipherChar  = app.alphabet[ cipherIndex ];
-
-                console.log(cipherChar + ": " + app.decryptFormula(plaintextCharIndex, keyCharIndex));
 
                 if( isUpper(app.plaintext[i]) ) {
                     cipherChar = cipherChar.toUpperCase();

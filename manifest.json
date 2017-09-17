@@ -2,7 +2,7 @@
     "name": "Vigenere encryption | LAB",
     "short_name": "Vigenere",
     "start_url": ".",
-    "description": "A simple encryption app that uses the Vigenere method",
+    "description": "A simple encryption app using the Vigenere method",
     "icons": [
         {
             "src": "/vigenere/icons/android-chrome-192x192.png?v=vMr0RXM5mN",
