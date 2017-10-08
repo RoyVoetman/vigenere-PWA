@@ -125,9 +125,7 @@
      ****************************************************************************/
 
     window.onload = function() {
-        setInterval(function(){
-            app.stopSpinner();
-        }, 500);
+        app.stopSpinner();
 
         if('serviceWorker' in navigator) {
             navigator.serviceWorker
