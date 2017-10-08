@@ -1,12 +1,12 @@
 var dataCacheName = 'vigenereData-v1.0.0';
 var cacheName = 'vigenere-v1.0.0';
 var filesToCache = [
-    '/vigenere/',
-    '/vigenere/index.html',
-    '/vigenere/vigenere.js',
-    '/vigenere/materialize/js/jquery.min.js',
-    '/vigenere/materialize/js/materialize.min.js',
-    '/vigenere/materialize/css/materialize.min.css',
+    '/',
+    '/index.html',
+    '/vigenere.js',
+    '/materialize/js/jquery.min.js',
+    '/materialize/js/materialize.min.js',
+    '/materialize/css/materialize.min.css',
 ];
 
 self.addEventListener('install', function(e) {
